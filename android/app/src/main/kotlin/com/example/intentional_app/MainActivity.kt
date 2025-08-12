@@ -19,14 +19,11 @@ class MainActivity : FlutterActivity() {
 
     override fun configureFlutterEngine(flutterEngine: FlutterEngine) {
         super.configureFlutterEngine(flutterEngine)
-        MethodChannel(flutterEngine.dartExecutor.binaryMessenger, CHANNEL).setMethodCallHandler { call, result ->
+        MethodChannel(flutterEngine.dartExecutor.binaryMessenger, CHANNEL).setMethodCallHandler { 
+            call, result ->
             when (call.method) {
-                "isAppLaunchDetectingServiceEnabled" -> {
-                    val isEnabled = isAccessibilityServiceEnabled("com.example.intentional_app.AppLaunchDetectingService")
-                    result.success(isEnabled)
-                }
-                "isAppBlockingServiceEnabled" -> {
-                    val isEnabled = isAccessibilityServiceEnabled("com.example.intentional_app.AppBlockingService")
+                "isAppMonitoringServiceEnabled" -> {
+                    val isEnabled = isAccessibilityServiceEnabled("com.example.intentional_app.AppMonitoringService")
                     result.success(isEnabled)
                 }
                 "openAccessibilitySettings" -> {
