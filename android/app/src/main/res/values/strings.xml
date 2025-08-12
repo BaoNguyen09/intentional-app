@@ -1,3 +1,4 @@
 <resources>
+    <string name="accessibility_service_label">Intentional App Accessibility Service</string>
     <string name="accessibility_service_description">This service helps you use apps more intentionally by monitoring app usage and showing reminders.</string>
 </resources> 
